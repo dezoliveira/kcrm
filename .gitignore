@@ -7,7 +7,7 @@ static_media
 /static_files
 static_files
 /media
-database.py
+database
 file_name.sql
 __pycache__ 
 __pycache__/
