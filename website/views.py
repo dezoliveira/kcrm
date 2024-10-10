@@ -2,8 +2,11 @@ from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import SignUpForm
+from .models import Customers
 
 def home(request):
+    customers = Customers.objects.all()
+
     # Check if user is logging in
     if request.method == 'POST':
         username = request.POST['username']
@@ -21,7 +24,7 @@ def home(request):
             return redirect('home')
         
     else:
-        return render(request, 'home.html', {})
+        return render(request, 'home.html', {'customers':customers})
 
 def logout_user(request):
     logout(request)
