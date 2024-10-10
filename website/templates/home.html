@@ -11,10 +11,10 @@
           <th scope="col">Name</th>
           <th scope="col">Email</th>
           <th scope="col">Phone</th>
-          <th scope="col">Address</th>
+          <!-- <th scope="col">Address</th> -->
           <th scope="col">City</th>
           <th scope="col">State</th>
-          <th scope="col">Zip Code</th>
+          <!-- <th scope="col">Zip Code</th> -->
           <!-- <th scope="col">Created At</th> -->
         </tr>
       </thead>
@@ -23,14 +23,20 @@
         {% for customer in customers %}
         
         <tr>
-          <td>{{ customer.id }}</td>
-          <td>{{ customer.first_name }} {{ customer.last_name }}</td>
+          <td>
+            <a href="{% url 'customer' customer.id %}">
+              <i class="fa-solid fa-address-book"></i>
+            </a>
+          </td>
+          <td>
+            {{ customer.first_name }} {{ customer.last_name }}
+          </td>
           <td>{{ customer.email }}</td>
           <td>{{ customer.phone }}</td>
-          <td>{{ customer.address }}</td>
+          <!-- <td>{{ customer.address }}</td> -->
           <td>{{ customer.city }}</td>
           <td>{{ customer.state }}</td>
-          <td>{{ customer.zipcode }}</td>
+          <!-- <td>{{ customer.zipcode }}</td> -->
           <!-- <td>{{ customer.created_at|date:'m/d/Y H:i' }}</td> -->
         </tr>
 

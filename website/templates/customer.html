@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Customer</h1>
+
+{{ customer.first_name }} {{ customer.last_name }}
+{{ customer.email }}
+{{ customer.phone }}
+{{ customer.address }}
+{{ customer.city }}
+{{ customer.state }}
+{{ customer.zipcode }}
+{{ customer.created_at|date:'m/d/Y H:i' }}
+
+{% endblock %}
