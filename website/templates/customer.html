@@ -3,63 +3,67 @@
 
 <h1>Customer</h1>
 
-<!-- Card -->
-<div class="card">
-
-  <!-- Full Name -->
-  <div class="card-header">
-    {{ customer.first_name }} {{ customer.last_name }}
+<div class="col-md-6 offset-md-3">
+  <!-- Card -->
+  <div class="card">
+  
+    <!-- Full Name -->
+    <div class="card-header">
+      {{ customer.first_name }} {{ customer.last_name }}
+    </div>
+  
+    <div class="card-body">
+  
+      <!-- Title -->
+      <h5 class="card-title">
+        <i class="fa-solid fa-address-book"></i>
+        Contact Info
+      </h5>
+  
+      <!-- Email -->
+      <div class="d-flex align-items-center gap-2">
+        <label class="fw-bold">Email:</label>
+        <p class="card-text">{{ customer.email }}</p>
+      </div>
+  
+      <!-- Address -->
+      <div class="d-flex align-items-center gap-2">
+        <label class="fw-bold">Address:</label>
+        <p class="card-text">{{ customer.address }}</p>
+      </div>
+  
+      <!-- City -->
+      <div class="d-flex align-items-center gap-2">
+        <label class="fw-bold">City:</label>
+        <p class="card-text">{{ customer.city }}</p>
+      </div>
+  
+      <!-- State -->
+      <div class="d-flex align-items-center gap-2">
+        <label class="fw-bold">State:</label>
+        <p class="card-text">{{ customer.state }}</p>
+      </div>
+  
+      <!-- Zip Code -->
+      <div class="d-flex align-items-center gap-2">
+        <label class="fw-bold">Zipcode:</label>
+        <p class="card-text">{{ customer.zipcode }}</p>
+      </div>
+  
+      <!-- Phone -->
+      <div class="d-flex align-items-center gap-2">
+        <label class="fw-bold">Phone:</label>
+        <p class="card-text">{{ customer.phone }}</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="py-4 d-flex justify-content-end gap-2">
+    <a href="{% url 'home' %}" class="btn btn-dark">Voltar</a>
+    <a href="{% url 'delete_customer' customer.id %}" class="btn btn-danger">Deletar</a>
   </div>
 
-  <div class="card-body">
-
-    <!-- Title -->
-    <h5 class="card-title">
-      <i class="fa-solid fa-address-book"></i>
-      Contact Info
-    </h5>
-
-    <!-- Email -->
-    <div class="d-flex align-items-center gap-2">
-      <label class="fw-bold">Email:</label>
-      <p class="card-text">{{ customer.email }}</p>
-    </div>
-
-    <!-- Address -->
-    <div class="d-flex align-items-center gap-2">
-      <label class="fw-bold">Address:</label>
-      <p class="card-text">{{ customer.address }}</p>
-    </div>
-
-    <!-- City -->
-    <div class="d-flex align-items-center gap-2">
-      <label class="fw-bold">City:</label>
-      <p class="card-text">{{ customer.city }}</p>
-    </div>
-
-    <!-- State -->
-    <div class="d-flex align-items-center gap-2">
-      <label class="fw-bold">State:</label>
-      <p class="card-text">{{ customer.state }}</p>
-    </div>
-
-    <!-- Zip Code -->
-    <div class="d-flex align-items-center gap-2">
-      <label class="fw-bold">Zipcode:</label>
-      <p class="card-text">{{ customer.zipcode }}</p>
-    </div>
-
-    <!-- Phone -->
-    <div class="d-flex align-items-center gap-2">
-      <label class="fw-bold">Phone:</label>
-      <p class="card-text">{{ customer.phone }}</p>
-    </div>
-  </div>
 </div>
 
-<div class="py-4 d-flex justify-content-end gap-2">
-  <a href="{% url 'home' %}" class="btn btn-dark">Voltar</a>
-  <a href="" class="btn btn-danger">Deletar</a>
-</div>
 
 {% endblock %}
