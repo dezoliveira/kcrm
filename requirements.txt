@@ -1,3 +1,4 @@
 django
 mysql
+mysql-connector
 mysql-connector-python
