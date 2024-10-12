@@ -68,7 +68,7 @@ def delete_customer(request, pk):
     if request.user.is_authenticated:
         customer = Customers.objects.get(id=pk)
         customer.delete()
-        messages.error(request, "Reacord delete successfully")
+        messages.error(request, "Record delete successfully")
         return redirect('home')
     else:
         messages.error(request, "You must be logged in to view that page")
