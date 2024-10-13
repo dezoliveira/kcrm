@@ -28,7 +28,7 @@ def home(request):
 
 def logout_user(request):
     logout(request)
-    messages.warning(request, "You Have Been Logged Out...")
+    messages.error(request, "You Have Been Logged Out...")
     return redirect('home')
 
 def register_user(request):
@@ -68,7 +68,7 @@ def delete_customer(request, pk):
     if request.user.is_authenticated:
         customer = Customers.objects.get(id=pk)
         customer.delete()
-        messages.error(request, "Record delete successfully")
+        messages.success(request, "Record delete successfully")
         return redirect('home')
     else:
         messages.error(request, "You must be logged in to view that page")
@@ -87,6 +87,21 @@ def add_customer(request):
         return render(request, 'add_customer.html', {'form': form})
     
     else:
-        messages.success(request, "You must be logged to view that page")
+        messages.error(request, "You must be logged to view that page")
         return redirect('home')
     
+def update_customer(request, pk):
+    if request.user.is_authenticated:
+        current_user = Customers.objects.get(id=pk)
+        form = AddCustomerForm(request.POST or None, instance=current_user)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Customer has been saved")
+            return redirect('home')
+        
+        return render(request, 'update_customer.html', {'form':form})
+    
+    else:
+        messages.error(request, "You must be logged to view that page")
+        return redirect('home')
