@@ -8,7 +8,7 @@ class SignUpForm(UserCreationForm):
 
     #### Email ####
     email = forms.EmailField(
-        label="",
+        label="Email",
         widget=forms.TextInput(
             attrs={
                 'class': 'form-control',
@@ -19,7 +19,7 @@ class SignUpForm(UserCreationForm):
 
     #### First Name ####
     first_name = forms.CharField(
-        label="",
+        label="First Name",
         max_length="50",
         widget=forms.TextInput(
             attrs={'class':'form-control', 'placeholder': 'First Name'}
@@ -28,7 +28,7 @@ class SignUpForm(UserCreationForm):
 
     #### Last Name ####
     last_name = forms.CharField(
-        label="",
+        label="Last Name",
         max_length="50",
         widget=forms.TextInput(
             attrs={'class':'form-control', 'placeholder': 'Last Name'}
@@ -50,7 +50,7 @@ class SignUpForm(UserCreationForm):
         super(SignUpForm, self).__init__(*args, **kwargs)
 
         self.fields['username'].widget.attrs['class'] = 'form-control'
-        self.fields['username'].widget.attrs['placeholder'] = 'User Name'
+        self.fields['username'].widget.attrs['placeholder'] = 'Username'
         self.fields['username'].label = ''
         self.fields['username'].help_text = '<span class="form-text text-muted"><small>Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</small></span>'
 
@@ -66,14 +66,14 @@ class SignUpForm(UserCreationForm):
 
 #### SIGNUP FORM ####
 class AddCustomerForm(forms.ModelForm):
-    first_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "First Name", "class": "form-control"}), label="")
-    last_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Last Name", "class": "form-control"}), label="")
-    email = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Email", "class": "form-control"}), label="")
-    phone = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Phone", "class": "form-control"}), label="")
-    address = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Address", "class": "form-control"}), label="")
-    city = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "City", "class": "form-control"}), label="")
-    state = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "State", "class": "form-control"}), label="")
-    zipcode = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Zipcode", "class": "form-control"}), label="")
+    first_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "First Name", "class": "form-control"}), label="Fist Name")
+    last_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Last Name", "class": "form-control"}), label="Last Name")
+    email = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Email", "class": "form-control"}), label="Email")
+    phone = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Phone", "class": "form-control"}), label="Phone")
+    address = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Address", "class": "form-control"}), label="Address")
+    city = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "City", "class": "form-control"}), label="City")
+    state = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "State", "class": "form-control"}), label="State")
+    zipcode = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Zipcode", "class": "form-control"}), label="Zipcode")
 
     class Meta:
         model = Customers
